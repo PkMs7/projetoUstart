@@ -1,9 +1,5 @@
 # Projeto Ustart
 
-Projeto realizado nas aulas do Bootcamp
+Projeto realizado nas aulas do Bootcamp Ustart
 
-![Documento](assets/pdf/Projeto%20Ustart.pdf)
-
-### Anotações realizadas nas aulas
-
-- <a href="https://unsplash.com/" target="_blank">Unsplash</a>
+![Documento](modelo/assets/pdf/Projeto%20Ustart.pdf)
