@@ -11,20 +11,16 @@
         // Consultas no banco de dados, obter o render das Eventos
         private static function getEventosLista() {
             $lista = '';
-            $result = entidade_eventos::getEventos(null,'DATA_EVENTO DESC');
+            $result = entidade_eventos::getEventos(null,'DATA_EVENTO_INICIO DESC');
 
             while ($eventos = $result->fetchObject(entidade_eventos::class)){
-                // echo '<pre>';
-                // print_r($eventos);
-                // echo '</pre>';
-                // exit();
 
                 $lista .= view::render('pages/listas/lista_eventos',[
                     'evento_nome'=> $eventos ->NOME_EVENTO,
                     'evento_descricao'=> $eventos ->DESCRICAO_EVENTO,
                     'evento_valor'=> $eventos ->VALOR_EVENTO,
                     'evento_carga_horaria' => $eventos ->CARGA_HORARIA,
-                    'evento_data' => date('d/m/Y H:i:s',strtotime($eventos ->DATA_EVENTO)),
+                    'evento_data' => date('d/m/Y H:i:s',strtotime($eventos ->DATA_EVENTO_INICIO)),
                 ]);
 
             }
@@ -45,47 +41,22 @@
             // Dados recebidos pelo metodo post
             $postVars = $request->getPostvars();
 
-            // echo '<pre>';
-            // print_r($postVars);
-            // echo '</pre>';
-            // exit();
-
             $eventos = new entidade_eventos;
 
             // Recomendado fazer validações se o dado vier inconsistente.
             $eventos->nome = $postVars['nome'];
-            $eventos->descricao = $postVars['descricao'];
+            $eventos->carga_horaria = $postVars['carga-horaria'];
             $eventos->valor = $postVars['valor'];
-            $eventos->carga_horaria = $postVars['carga_horaria'];
-            $eventos->data = $postVars['data'];
+            $eventos->data_inicio = $postVars['data-inicio'];
+            $eventos->data_fim = $postVars['data-fim'];
+            $eventos->descricao = $postVars['descricao'];
 
             $eventos->cadastrar();
-
-            // echo '<pre>';
-            // print_r($postVars);
-            // echo '</pre>';
-            // exit();
             
             return self::getEventos();
         }
 
     }
-
-    // class Home extends page{
-    //     public static function getHome(){
-    //         $conteudo = view::render('pages/home',[
-    //             'nome'=> 'U-Start',
-    //             'sala' =>'io7lc5m'
-    //         ]);
-    //         return parent::getPage('U-Start 02',$conteudo);
-    //     }
-    // }
-
-    // class Home{
-    //     public static function getHome(){
-    //         return "Hello World";
-    //     }
-    // }
 
 ?>
 

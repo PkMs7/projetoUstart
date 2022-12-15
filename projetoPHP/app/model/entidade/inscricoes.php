@@ -26,11 +26,6 @@ class inscricoes {
 
         return true;
 
-        //    echo '<pre>';
-        //    print_r($this);
-        //    echo '</pre>';
-        //    exit(); 
-
     }
 
     // Reponsavel pelo retorno das incrições '*' pegar todos os campos

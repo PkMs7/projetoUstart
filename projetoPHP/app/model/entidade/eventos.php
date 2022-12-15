@@ -6,11 +6,19 @@ use \WilliamCosta\DatabaseManager\Database;
 
 class eventos {
 
-    // public $id;
+    public $id;
 
-    // public $nome;
+    public $nome;
 
-    // public $mensagem;
+    public $carga_horaria;
+
+    public $valor;
+
+    public $data_inicio;
+
+    public $data_fim;
+
+    public $descricao;
 
     public function cadastrar() {
 
@@ -18,26 +26,22 @@ class eventos {
         // $this->data = date("Y-m-d H:i:s");
 
         // Inserindo informações da inscrição nos eventos
-        $this->id = (new Database('tbleventos'))->insert([
+        $this->id = (new Database('tblevento'))->insert([
             'NOME_EVENTO' => $this->nome,
-            'DESCRICAO_EVENTO' => $this->descricao,
-            'VALOR_EVENTO' => $this->valor,
             'CARGA_HORARIA' => $this->carga_horaria,
-            'DATA_EVENTO' => $this->data = date("Y-m-d H:i:s"),
+            'VALOR_EVENTO' => $this->valor,
+            'DATA_EVENTO_INICIO' => $this->data_inicio = date("Y-m-d H:i:s"),
+            'DATA_EVENTO_FIM' => $this->data_fim = date("Y-m-d H:i:s"),
+            'DESCRICAO_EVENTO' => $this->descricao,
         ]);
 
         return true;
-
-        //    echo '<pre>';
-        //    print_r($this);
-        //    echo '</pre>';
-        //    exit(); 
 
     }
 
     // Reponsavel pelo retorno das incrições '*' pegar todos os campos
     public static function getEventos($where = null, $order = null, $limit = null, $field = '*') {
-        return (new Database('tbleventos'))->select($where,$order,$limit,$field);
+        return (new Database('tblevento'))->select($where,$order,$limit,$field);
     }
 
 }

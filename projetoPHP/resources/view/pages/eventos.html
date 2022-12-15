@@ -1,53 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--Bootstrap-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-        <link rel="stylesheet" href="../../../styles/style.css">
-        <title>Projeto Ustart</title>
-    </head>
-    
-    <body class="corpo-formulario">
-    
-        <header>
-            <nav class="navbar navbar-expand-lg bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="../../index.html">Ustart Eventos</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="../../index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="cadastroEventos.html">Eventos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Inscrições</a>
-                            </li>
-                        </ul>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                            <button class="btn btn-outline-light" type="submit">Pesquisar</button>
-                        </form>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    
+<body class="corpo-formulario"> 
         <div class="container container-formulario">
             <div class="texto-eventos">
                 <h3>Cadastro de Eventos</h3>
             </div>
-            <form action="">
+            <form action=""  method="POST" name="formulario_eventos" id="formulario_eventos">
                 <div class="row">
                     <div class="col-12">
                         <label for="nome" class="form-label">Nome</label>
@@ -89,5 +45,4 @@
         <section>
             {{lista_eventos}}
         </section>
-    </body>
-</html>
+</body>
